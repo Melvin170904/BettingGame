@@ -1,12 +1,13 @@
-/* Global */
+/* Global reset */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b1020;
+    background: #0b1b10; /* dark green/black */
     color: #f5f5f5;
 }
 
@@ -15,282 +16,284 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #111827;
-    padding: 10px 20px;
-    border-bottom: 2px solid #1f2937;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #0f3b1f, #15803d);
+    border-bottom: 2px solid #1f9d55;
 }
 
-.logo-main {
-    font-weight: bold;
+.logo {
     font-size: 20px;
-    color: #22c55e;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ffffff;
 }
 
 .logo-sub {
     display: block;
-    font-size: 12px;
-    color: #9ca3af;
+    font-size: 11px;
+    font-weight: normal;
+    color: #c7f9cc;
 }
 
-.user-area {
-    font-size: 14px;
+.balance {
+    font-size: 16px;
+    background: #052e16;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #22c55e;
 }
 
-.balance-label {
-    color: #9ca3af;
-    margin-right: 5px;
-}
-
-/* Main nav */
+/* Navigation */
 .main-nav {
     display: flex;
-    background: #1f2937;
-    padding: 8px 20px;
-    gap: 10px;
+    gap: 8px;
+    padding: 10px 24px;
+    background: #052e16;
+    border-bottom: 1px solid #14532d;
 }
 
-.nav-item {
-    background: #111827;
-    color: #e5e7eb;
-    border: none;
+.nav-btn {
     padding: 8px 16px;
     border-radius: 20px;
+    border: 1px solid #16a34a;
+    background: #064e3b;
+    color: #e5ffe9;
     cursor: pointer;
     font-size: 14px;
+    transition: background 0.2s, transform 0.1s;
 }
 
-    .nav-item.active,
-    .nav-item:hover {
+    .nav-btn:hover {
+        background: #16a34a;
+        transform: translateY(-1px);
+    }
+
+    .nav-btn.active {
         background: #22c55e;
-        color: #111827;
+        color: #022c22;
     }
 
 /* Layout */
 .layout {
     display: grid;
-    grid-template-columns: 220px 1fr 280px;
-    gap: 15px;
-    padding: 15px 20px;
+    grid-template-columns: 240px 1fr 320px;
+    gap: 16px;
+    padding: 16px 24px;
 }
 
-/* Side menu */
-.side-menu {
-    background: #111827;
-    padding: 15px;
-    border-radius: 6px;
-}
-
-    .side-menu h3 {
-        margin-top: 0;
-        font-size: 14px;
-        color: #9ca3af;
-    }
-
-    .side-menu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 15px 0;
-    }
-
-.side-link {
-    padding: 6px 4px;
-    font-size: 14px;
-    color: #e5e7eb;
-    cursor: pointer;
-}
-
-    .side-link:hover,
-    .side-link.active {
-        color: #22c55e;
-    }
-
-/* Content */
-.content {
-    background: #111827;
-    padding: 15px;
-    border-radius: 6px;
-}
-
-#section-title {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-.event-list {
+/* Sidebar */
+.sidebar {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
 }
 
-/* Event card */
-.event-card {
-    background: #020617;
-    border-radius: 6px;
-    padding: 10px;
-    border: 1px solid #1f2937;
+.panel {
+    background: #022c22;
+    border-radius: 8px;
+    padding: 12px 14px;
+    border: 1px solid #14532d;
 }
 
-.event-header {
-    display: flex;
-    justify-content: space-between;
+    .panel h2 {
+        font-size: 14px;
+        margin-bottom: 8px;
+        color: #bbf7d0;
+        border-bottom: 1px solid #14532d;
+        padding-bottom: 4px;
+    }
+
+    .panel ul {
+        list-style: none;
+        margin-top: 4px;
+    }
+
+    .panel li {
+        padding: 4px 0;
+        font-size: 13px;
+        color: #e5ffe9;
+    }
+
+/* Matches area */
+.matches-area {
+    background: #022c22;
+    border-radius: 8px;
+    padding: 14px 16px;
+    border: 1px solid #14532d;
+}
+
+    .matches-area h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #bbf7d0;
+    }
+
+/* Match card */
+.match-card {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    align-items: center;
+    padding: 10px 12px;
     margin-bottom: 8px;
+    background: #041f1a;
+    border-radius: 6px;
+    border: 1px solid #064e3b;
 }
 
-.event-name {
-    font-weight: bold;
+.match-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.match-teams {
     font-size: 14px;
+    font-weight: bold;
 }
 
-.event-time {
+.match-time {
     font-size: 12px;
     color: #9ca3af;
 }
 
-.market-row {
+.match-market {
+    font-size: 12px;
+    color: #d1fae5;
+}
+
+/* Odds buttons */
+.odds-group {
     display: flex;
-    gap: 8px;
-    margin-top: 5px;
+    justify-content: center;
+    gap: 6px;
 }
 
 .odds-btn {
-    flex: 1;
-    background: #111827;
-    border: 1px solid #374151;
+    padding: 6px 10px;
     border-radius: 4px;
-    padding: 6px;
-    cursor: pointer;
-    color: #e5e7eb;
+    border: 1px solid #22c55e;
+    background: #064e3b;
+    color: #e5ffe9;
     font-size: 13px;
-    display: flex;
-    justify-content: space-between;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
 }
 
     .odds-btn:hover {
-        border-color: #22c55e;
+        background: #16a34a;
+        transform: translateY(-1px);
     }
 
-.odds-label {
-    font-size: 12px;
-}
-
-.odds-value {
-    font-weight: bold;
-}
+    .odds-btn.selected {
+        background: #22c55e;
+        color: #022c22;
+    }
 
 /* Bet slip */
-.bet-slip {
-    background: #111827;
-    padding: 15px;
-    border-radius: 6px;
+.betslip {
+    background: #022c22;
+    border-radius: 8px;
+    padding: 14px 16px;
+    border: 1px solid #14532d;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-    .bet-slip h2 {
-        margin-top: 0;
+    .betslip h2 {
         font-size: 16px;
+        margin-bottom: 8px;
+        color: #bbf7d0;
     }
 
-.bet-slip-items {
+.betslip-selections {
     min-height: 120px;
-    max-height: 260px;
-    overflow-y: auto;
-    border: 1px solid #1f2937;
-    border-radius: 4px;
-    padding: 8px;
-    background: #020617;
-}
-
-.empty-slip {
     font-size: 13px;
-    color: #6b7280;
+    background: #041f1a;
+    border-radius: 6px;
+    padding: 8px;
+    border: 1px solid #064e3b;
+    margin-bottom: 10px;
 }
 
-.bet-slip-item {
-    border-bottom: 1px solid #1f2937;
+.betslip-selection-item {
+    border-bottom: 1px solid #064e3b;
     padding: 6px 0;
     font-size: 13px;
 }
 
-    .bet-slip-item:last-child {
+    .betslip-selection-item:last-child {
         border-bottom: none;
     }
 
-.bet-slip-line1 {
+.betslip-selection-header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2px;
 }
 
-.bet-slip-line2 {
-    display: flex;
-    justify-content: space-between;
+.betslip-selection-market {
+    font-size: 11px;
     color: #9ca3af;
-    font-size: 12px;
 }
 
-.remove-bet {
-    background: none;
-    border: none;
-    color: #f97316;
-    cursor: pointer;
-    font-size: 12px;
+/* Controls */
+.betslip-controls {
+    margin-top: 8px;
+    font-size: 13px;
 }
 
-/* Summary */
-.bet-slip-summary {
-    margin-top: 10px;
-    font-size: 14px;
-}
+    .betslip-controls label {
+        display: block;
+        margin-bottom: 4px;
+    }
 
-.stake-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#stakeInput {
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #16a34a;
+    background: #041f1a;
+    color: #f9fafb;
     margin-bottom: 8px;
 }
 
-#stake-input {
-    width: 80px;
-    padding: 4px;
-    border-radius: 4px;
-    border: 1px solid #4b5563;
-    background: #020617;
-    color: #e5e7eb;
-}
-
-.summary-row {
+.betslip-summary {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 4px;
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
+    .betslip-summary span:last-child {
+        font-weight: bold;
+    }
+
+/* Place bet button */
 .place-bet-btn {
     width: 100%;
-    margin-top: 8px;
     padding: 8px;
     border-radius: 4px;
     border: none;
     background: #22c55e;
-    color: #111827;
+    color: #022c22;
     font-weight: bold;
     cursor: pointer;
+    font-size: 14px;
+    transition: background 0.15s, transform 0.1s;
 }
 
     .place-bet-btn:hover {
-        background: #16a34a;
+        background: #4ade80;
+        transform: translateY(-1px);
     }
 
-.bet-message {
-    font-size: 12px;
-    margin-top: 6px;
-    min-height: 16px;
-}
-
 /* Footer */
-.footer {
-    text-align: center;
-    padding: 10px;
-    font-size: 12px;
-    color: #6b7280;
-    border-top: 1px solid #1f2937;
+.betslip-footer {
     margin-top: 10px;
+    font-size: 11px;
+    color: #9ca3af;
+    text-align: center;
+    border-top: 1px solid #14532d;
+    padding-top: 6px;
 }

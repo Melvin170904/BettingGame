@@ -2,93 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The Syndicate Sportsbook</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>The Slips – Football Betting</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Top bar -->
     <header class="top-bar">
         <div class="logo">
-            <span class="logo-main">The Syndicate</span>
-            <span class="logo-sub">Sportsbook</span>
+            THE SLIPS
+            <span class="logo-sub">FOOTBALL BETTING</span>
         </div>
-        <div class="user-area">
-            <span class="balance-label">Balance:</span>
-            <span id="user-balance">£100.00</span>
+        <div class="balance">
+            Balance: <span id="balanceAmount">£100.00</span>
         </div>
     </header>
 
-    <!-- Main navigation -->
     <nav class="main-nav">
-        <button class="nav-item active" data-section="live">Live</button>
-        <button class="nav-item" data-section="football">Football</button>
-        <button class="nav-item" data-section="horses">Horse Racing</button>
-        <button class="nav-item" data-section="specials">Specials</button>
+        <button class="nav-btn active" data-league="premier">Premier League</button>
+        <button class="nav-btn" data-league="champions">Champions League</button>
+        <button class="nav-btn" data-league="championship">Championship</button>
+        <button class="nav-btn" data-league="international">International</button>
     </nav>
 
-    <!-- Main layout -->
-    <div class="layout">
+    <main class="layout">
+        <!-- LEFT COLUMN: SIDEBAR -->
+        <aside class="sidebar">
+            <section class="panel">
+                <h2>Competitions</h2>
+                <ul>
+                    <li>Premier League</li>
+                    <li>Champions League</li>
+                    <li>Championship</li>
+                    <li>International</li>
+                </ul>
+            </section>
 
-        <!-- Left: sports / markets -->
-        <aside class="side-menu">
-            <h3>Sports</h3>
-            <ul>
-                <li class="side-link active" data-section="football">Football</li>
-                <li class="side-link" data-section="horses">Horse Racing</li>
-                <li class="side-link" data-section="specials">Specials</li>
-            </ul>
-
-            <h3>Quick Links</h3>
-            <ul>
-                <li class="side-link">Today’s Matches</li>
-                <li class="side-link">Popular Bets</li>
-                <li class="side-link">In-Play</li>
-            </ul>
+            <section class="panel">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li>Today’s Matches</li>
+                    <li>Both Teams To Score</li>
+                    <li>Over/Under Goals</li>
+                </ul>
+            </section>
         </aside>
 
-        <!-- Centre: events and odds -->
-        <main class="content">
-            <h2 id="section-title">Live Bets</h2>
-            <div id="event-list" class="event-list">
-                <!-- Events injected by JS -->
-            </div>
-        </main>
+        <!-- MIDDLE COLUMN: MATCHES -->
+        <section class="matches-area">
+            <h1 id="leagueTitle">Premier League</h1>
 
-        <!-- Right: bet slip -->
-        <aside class="bet-slip">
+            <div id="matchesContainer">
+                <!-- Matches will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- RIGHT COLUMN: BET SLIP -->
+        <aside class="betslip">
             <h2>Bet Slip</h2>
-            <div id="selected-bets" class="bet-slip-items">
-                <p class="empty-slip">No selections yet. Click odds to add a bet.</p>
+            <div id="betslipSelections" class="betslip-selections">
+                No selections yet. Tap odds to add a bet.
             </div>
 
-            <div class="bet-slip-summary">
-                <label class="stake-row">
-                    Stake (£):
-                    <input type="number" id="stake-input" min="0" step="0.5" value="0">
-                </label>
+            <div class="betslip-controls">
+                <label for="stakeInput">Stake (£):</label>
+                <input type="number" id="stakeInput" min="0" step="1" value="0">
 
-                <div class="summary-row">
-                    <span>Total Odds:</span>
-                    <span id="total-odds">1.00</span>
-                </div>
-                <div class="summary-row">
-                    <span>Potential Return:</span>
-                    <span id="potential-return">£0.00</span>
+                <div class="betslip-summary">
+                    <div>
+                        <span>Total Odds:</span>
+                        <span id="totalOdds">1.00</span>
+                    </div>
+                    <div>
+                        <span>Potential Return:</span>
+                        <span id="potentialReturn">£0.00</span>
+                    </div>
                 </div>
 
-                <button id="place-bet" class="place-bet-btn">Place Bet</button>
-                <p id="bet-message" class="bet-message"></p>
+                <button id="placeBetBtn" class="place-bet-btn">Place Bet</button>
             </div>
+
+            <footer class="betslip-footer">
+                CST2550 Group Project – Football Betting Platform
+            </footer>
         </aside>
+    </main>
 
-    </div>
-
-    <footer class="footer">
-        <p>CST2550 Group Project – The Syndicate Betting Platform</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
