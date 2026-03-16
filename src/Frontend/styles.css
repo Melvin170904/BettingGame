@@ -1,4 +1,4 @@
-/* Global reset */
+/* GLOBAL */
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +7,11 @@
 }
 
 body {
-    background: #0b1b10; /* dark green/black */
+    background: #0b1b10;
     color: #f5f5f5;
 }
 
-/* Top bar */
+/* TOP BAR */
 .top-bar {
     display: flex;
     justify-content: space-between;
@@ -24,14 +24,12 @@ body {
 .logo {
     font-size: 20px;
     font-weight: bold;
-    letter-spacing: 1px;
     color: #ffffff;
 }
 
 .logo-sub {
     display: block;
     font-size: 11px;
-    font-weight: normal;
     color: #c7f9cc;
 }
 
@@ -43,7 +41,7 @@ body {
     border: 1px solid #22c55e;
 }
 
-/* Navigation */
+/* NAVIGATION */
 .main-nav {
     display: flex;
     gap: 8px;
@@ -59,21 +57,14 @@ body {
     background: #064e3b;
     color: #e5ffe9;
     cursor: pointer;
-    font-size: 14px;
-    transition: background 0.2s, transform 0.1s;
 }
-
-    .nav-btn:hover {
-        background: #16a34a;
-        transform: translateY(-1px);
-    }
 
     .nav-btn.active {
         background: #22c55e;
         color: #022c22;
     }
 
-/* Layout */
+/* LAYOUT */
 .layout {
     display: grid;
     grid-template-columns: 240px 1fr 320px;
@@ -81,7 +72,7 @@ body {
     padding: 16px 24px;
 }
 
-/* Sidebar */
+/* SIDEBAR */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -90,8 +81,8 @@ body {
 
 .panel {
     background: #022c22;
+    padding: 12px;
     border-radius: 8px;
-    padding: 12px 14px;
     border: 1px solid #14532d;
 }
 
@@ -99,56 +90,42 @@ body {
         font-size: 14px;
         margin-bottom: 8px;
         color: #bbf7d0;
-        border-bottom: 1px solid #14532d;
-        padding-bottom: 4px;
     }
 
     .panel ul {
         list-style: none;
-        margin-top: 4px;
     }
 
     .panel li {
         padding: 4px 0;
         font-size: 13px;
-        color: #e5ffe9;
     }
 
-/* Matches area */
-.matches-area {
+/* TAB SECTIONS */
+.tab-section {
     background: #022c22;
+    padding: 16px;
     border-radius: 8px;
-    padding: 14px 16px;
     border: 1px solid #14532d;
 }
 
-    .matches-area h1 {
-        font-size: 18px;
-        margin-bottom: 10px;
+    .tab-section h1 {
+        margin-bottom: 12px;
         color: #bbf7d0;
     }
 
-/* Match card */
+/* MATCH CARDS */
 .match-card {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    align-items: center;
-    padding: 10px 12px;
-    margin-bottom: 8px;
     background: #041f1a;
-    border-radius: 6px;
     border: 1px solid #064e3b;
-}
-
-.match-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
 }
 
 .match-teams {
-    font-size: 14px;
     font-weight: bold;
+    font-size: 15px;
 }
 
 .match-time {
@@ -156,144 +133,81 @@ body {
     color: #9ca3af;
 }
 
-.match-market {
-    font-size: 12px;
-    color: #d1fae5;
-}
-
-/* Odds buttons */
 .odds-group {
     display: flex;
-    justify-content: center;
     gap: 6px;
+    margin-top: 8px;
 }
 
 .odds-btn {
-    padding: 6px 10px;
-    border-radius: 4px;
-    border: 1px solid #22c55e;
+    flex: 1;
+    padding: 6px;
     background: #064e3b;
-    color: #e5ffe9;
-    font-size: 13px;
+    border: 1px solid #22c55e;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background 0.15s, transform 0.1s;
+    color: #e5ffe9;
 }
 
     .odds-btn:hover {
-        background: #16a34a;
-        transform: translateY(-1px);
-    }
-
-    .odds-btn.selected {
         background: #22c55e;
         color: #022c22;
     }
 
-/* Bet slip */
+/* BET SLIP */
 .betslip {
     background: #022c22;
+    padding: 16px;
     border-radius: 8px;
-    padding: 14px 16px;
     border: 1px solid #14532d;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
-    .betslip h2 {
-        font-size: 16px;
-        margin-bottom: 8px;
-        color: #bbf7d0;
-    }
-
 .betslip-selections {
-    min-height: 120px;
-    font-size: 13px;
     background: #041f1a;
-    border-radius: 6px;
-    padding: 8px;
     border: 1px solid #064e3b;
+    padding: 8px;
+    border-radius: 6px;
+    min-height: 120px;
     margin-bottom: 10px;
 }
 
 .betslip-selection-item {
     border-bottom: 1px solid #064e3b;
     padding: 6px 0;
-    font-size: 13px;
 }
 
-    .betslip-selection-item:last-child {
-        border-bottom: none;
-    }
-
-.betslip-selection-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2px;
-}
-
-.betslip-selection-market {
-    font-size: 11px;
-    color: #9ca3af;
-}
-
-/* Controls */
 .betslip-controls {
-    margin-top: 8px;
-    font-size: 13px;
+    margin-top: 10px;
 }
-
-    .betslip-controls label {
-        display: block;
-        margin-bottom: 4px;
-    }
 
 #stakeInput {
     width: 100%;
     padding: 6px;
-    border-radius: 4px;
-    border: 1px solid #16a34a;
     background: #041f1a;
-    color: #f9fafb;
-    margin-bottom: 8px;
+    border: 1px solid #22c55e;
+    border-radius: 4px;
+    color: #e5ffe9;
 }
 
-.betslip-summary {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    margin-bottom: 10px;
-}
-
-    .betslip-summary span:last-child {
-        font-weight: bold;
-    }
-
-/* Place bet button */
 .place-bet-btn {
     width: 100%;
     padding: 8px;
-    border-radius: 4px;
-    border: none;
     background: #22c55e;
+    border: none;
+    border-radius: 4px;
     color: #022c22;
     font-weight: bold;
     cursor: pointer;
-    font-size: 14px;
-    transition: background 0.15s, transform 0.1s;
 }
 
     .place-bet-btn:hover {
         background: #4ade80;
-        transform: translateY(-1px);
     }
 
-/* Footer */
+/* FOOTER */
 .betslip-footer {
     margin-top: 10px;
     font-size: 11px;
     color: #9ca3af;
     text-align: center;
-    border-top: 1px solid #14532d;
-    padding-top: 6px;
 }

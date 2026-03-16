@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The Slips – Football Betting</title>
+    <title>Slips – Football Betting</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- TOP BAR -->
     <header class="top-bar">
         <div class="logo">
-            THE SLIPS
+            Slips
             <span class="logo-sub">FOOTBALL BETTING</span>
         </div>
         <div class="balance">
@@ -16,15 +18,17 @@
         </div>
     </header>
 
+    <!-- NAVIGATION TABS -->
     <nav class="main-nav">
-        <button class="nav-btn active" data-league="premier">Premier League</button>
-        <button class="nav-btn" data-league="champions">Champions League</button>
-        <button class="nav-btn" data-league="championship">Championship</button>
-        <button class="nav-btn" data-league="international">International</button>
+        <button class="nav-btn active" data-tab="bettingSection">Betting</button>
+        <button class="nav-btn" data-tab="resultsSection">Results</button>
+        <button class="nav-btn" data-tab="myBetsSection">My Bets</button>
     </nav>
 
+    <!-- MAIN LAYOUT -->
     <main class="layout">
-        <!-- LEFT COLUMN: SIDEBAR -->
+
+        <!-- LEFT SIDEBAR -->
         <aside class="sidebar">
             <section class="panel">
                 <h2>Competitions</h2>
@@ -46,18 +50,26 @@
             </section>
         </aside>
 
-        <!-- MIDDLE COLUMN: MATCHES -->
-        <section class="matches-area">
-            <h1 id="leagueTitle">Premier League</h1>
+        <!-- MIDDLE COLUMN: TABS -->
+        <section id="bettingSection" class="tab-section">
+            <h1>Football Betting</h1>
+            <div id="matchesContainer"></div>
+        </section>
 
-            <div id="matchesContainer">
-                <!-- Matches will be injected here by JavaScript -->
-            </div>
+        <section id="resultsSection" class="tab-section" style="display:none;">
+            <h1>Match Results</h1>
+            <div id="resultsList"></div>
+        </section>
+
+        <section id="myBetsSection" class="tab-section" style="display:none;">
+            <h1>My Bets</h1>
+            <div id="myBetsList"></div>
         </section>
 
         <!-- RIGHT COLUMN: BET SLIP -->
         <aside class="betslip">
             <h2>Bet Slip</h2>
+
             <div id="betslipSelections" class="betslip-selections">
                 No selections yet. Tap odds to add a bet.
             </div>
@@ -84,8 +96,10 @@
                 CST2550 Group Project – Football Betting Platform
             </footer>
         </aside>
+
     </main>
 
     <script src="script.js"></script>
 </body>
 </html>
+
